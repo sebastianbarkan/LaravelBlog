@@ -21,13 +21,23 @@
             <a class="link-logo-wrap" href="/">
                 <img src="{{asset('images/redditlogotext.png')}}" alt="reddit logo" class="img-logo">
             </a>
+            <div class="navigation-dropdown-wrap">
+                <span class="span-navigation-label">
+                    <i class="fa-solid fa-house"></i>
+                    <p class="text-navigation-label">Home</p>
+                </span>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>  
             <div class="search-input-wrap">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" class="input-search" placeholder="Search Reddit">
             </div>
             <a class="link-profile-wrap">
-                <img src="{{asset('images/redditprofileimg.png')}}" alt="profile image" class="img-profile">
-                <p class="text-profile">UserName</p>
+                <span class="span-profile-wrap">
+                    <img src="{{asset('images/redditprofileimg.png')}}" alt="profile image" class="img-profile">
+                    <p class="text-profile">UserName</p>
+                </span>
+                <i class="fa-solid fa-angle-down"></i>
             </a>    
         </header>
         <main class="main-wrap">

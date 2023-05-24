@@ -154,6 +154,7 @@ html,
 
 .link-logo-wrap {
     cursor: pointer;
+    flex-basis: 5%;
 }
 
 .img-logo {
@@ -165,6 +166,7 @@ html,
     position: relative;
     display: flex;
     width: 100%;
+    flex-basis: 70%;
     align-items: center;
 }
 
@@ -177,6 +179,16 @@ html,
     font-size: 14px;
     line-height: 14px;
     width: 100%;
+}
+
+.input-search:focus {
+    border: 1px solid #7bbdff;
+    outline: none;
+}
+
+.input-search:active {
+    border: 1px solid #7bbdff;
+    outline: none;
 }
 
 .search-icon {
@@ -192,13 +204,42 @@ html,
     cursor: pointer;
     border: 1px solid transparent;
     border-radius: 4px;
-    padding: 0.15rem 0.25rem;
+    padding: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
+    flex-basis: 12.5%;
 }
 
 .link-profile-wrap:hover {
     border: 1px solid #edeff1;
 }
 
+.span-profile-wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+}
+
 .img-profile {
     width: 2rem;
+}
+
+.navigation-dropdown-wrap {
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 12.5%;
+}
+
+.span-navigation-label {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.navigation-dropdown-wrap:hover {
+    border: 1px solid #edeff1;
 }
