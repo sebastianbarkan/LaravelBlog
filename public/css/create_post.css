@@ -1,0 +1,299 @@
+.text-create-post-label {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #1b1b1c;
+    padding: 4px 4px 16px 4px;
+    margin: 16px 0px;
+    border-bottom: 1px solid #edeff1;
+}
+
+.span-choose-community-img-placeholder {
+    box-sizing: border-box;
+    border-radius: 22px;
+    border: 1px dashed #878a8c;
+    margin: 0px;
+    height: 22px;
+    width: 22px;
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.choose-community-wrap {
+    width: 40%;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+}
+
+.span-community-label {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.icon-choose-community {
+    color: #878a8c;
+}
+
+.create-post-wrap {
+    width: 100%;
+    border-radius: 4px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-create-post-type {
+    background: none;
+    color: #878a8c;
+    display: flex;
+    column-gap: 0.5rem;
+    border-color: #edeff1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-radius: 0;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    padding: 15px 17px;
+    justify-content: center;
+}
+
+.btn-create-post-type-selected {
+    color: #0079d3;
+    background: none;
+    display: flex;
+    column-gap: 0.5rem;
+    border-color: #0079d3;
+    border-style: solid;
+    border-width: 0 0px 3px 0;
+    border-radius: 0;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    padding: 15px 17px;
+    justify-content: center;
+}
+
+.btn-create-post-type-center {
+    background: none;
+    color: #878a8c;
+    display: flex;
+    column-gap: 0.5rem;
+    border-color: #edeff1;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    border-radius: 0;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    padding: 15px 17px;
+    justify-content: center;
+}
+
+.btn-create-post-type-selected:hover {
+    background-color: aliceblue;
+}
+
+.btn-create-post-type:hover {
+    background-color: aliceblue;
+}
+
+.btn-create-post-type-center:hover {
+    background-color: aliceblue;
+}
+
+.create-post-type-btn-wrap {
+    display: flex;
+    width: 100%;
+}
+
+.icon-create-post-type {
+    font-size: 1.25rem;
+}
+
+.form-create-post {
+    padding: 1rem;
+    display: flex;
+    row-gap: 1rem;
+    width: 100%;
+    flex-direction: column;
+}
+
+.textarea-title-create-post {
+    color: #1c1c1c;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    height: 38.6px;
+    padding: 8px 68px 8px 16px;
+    width: 100%;
+    border: 1px solid #edeff1;
+    background-color: transparent;
+}
+
+.textarea-content-create-post {
+    color: #1c1c1c;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    height: 38.6px;
+    width: 100%;
+    padding: 8px 68px 8px 16px;
+    border: 1px solid #edeff1;
+    background-color: transparent;
+}
+
+.create-post-inputs-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.create-post-flair-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    column-gap: 0.25rem;
+    justify-content: start;
+}
+
+.btn-create-post-flair-disabled {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    cursor: pointer;
+    min-height: 32px;
+    min-width: 32px;
+    background: none;
+    display: flex;
+    border-radius: 9999px;
+    padding: 0.25rem 1rem;
+    color: rgba(135, 138, 140, 0.5);
+    border: 1px solid rgba(135, 138, 140, 0.5);
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.btn-create-post-flair {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    min-height: 32px;
+    min-width: 32px;
+    cursor: pointer;
+    background: none;
+    display: flex;
+    border-radius: 9999px;
+    padding: 0.25rem 1rem;
+    color: #878a8c;
+    border: 1px solid #878a8c;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.btn-create-post-flair:hover {
+    background-color: #efefef85;
+}
+
+.icon-create-post-flair {
+    font-size: 1.25rem;
+}
+
+.hr-create-post {
+    border: 1px solid #edeff1;
+    width: 100%;
+}
+
+.btn-save-draft-create-post {
+    color: #373c3f;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    min-height: 32px;
+    min-width: 32px;
+    cursor: pointer;
+    background: none;
+    display: flex;
+    border-radius: 9999px;
+    padding: 0.25rem 1rem;
+    border: 1px solid #373c3f;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.btn-save-draft-create-post:hover {
+    background-color: #efefef85;
+}
+
+.btn-post-create-post {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    min-height: 32px;
+    min-width: 32px;
+    cursor: pointer;
+    background-color: #373c3f;
+    display: flex;
+    border-radius: 9999px;
+    padding: 0.25rem 1rem;
+    border: 1px solid #373c3f;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.btn-post-create-post:hover {
+    background-color: #414243;
+}
+
+.btn-post-create-post-disabled {
+    color: rgb(188, 188, 188);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    min-height: 32px;
+    min-width: 32px;
+    cursor: pointer;
+    background-color: #2e3335;
+    display: flex;
+    border-radius: 9999px;
+    padding: 0.25rem 1rem;
+    border: 1px solid #2e3335;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.action-btns-create-post-wrap {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: end;
+}

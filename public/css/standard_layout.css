@@ -143,6 +143,10 @@ html,
 
 .main-wrap {
     padding: 2% 30%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 1rem;
 }
 
 .header {

@@ -16,6 +16,7 @@
         />
         <link href="{{ asset('css/standard_layout.css'); }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/index.css'); }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/create_post.css'); }}" rel="stylesheet" type="text/css">
     </head>
     <body class="wrapper">
         <header class="header">
