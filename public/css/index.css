@@ -1,0 +1,43 @@
+.link-create-post {
+    cursor: pointer;
+    color: transparent;
+}
+
+.create-post-link-wrap {
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    justify-content: space-between;
+}
+
+.img-create-post-link {
+    width: 2.5rem;
+}
+
+.input-link-create-post {
+    cursor: pointer;
+    color: transparent;
+    width: 100%;
+}
+
+.input-create-post-link {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #1c1c1c;
+    width: 100%;
+    border-radius: 4px;
+    height: 38px;
+    padding: 0px 16px;
+    border: 1px solid #edeff1;
+    background-color: #f6f7f8;
+}
+
+.icon-create-media-post {
+    color: #878a8c;
+    font-size: 2rem;
+}

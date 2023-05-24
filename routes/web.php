@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+//Get Create Post 
+Route::get('/create-post', function () {
+    return view('create-post');
+});
