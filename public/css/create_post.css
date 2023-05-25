@@ -141,6 +141,17 @@
     background-color: transparent;
 }
 
+.input-create-link-post {
+    color: #1c1c1c;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 68px 8px 16px;
+    border: 1px solid #edeff1;
+    background-color: transparent;
+}
+
 .create-post-inputs-wrap {
     display: flex;
     flex-direction: column;

@@ -38,13 +38,20 @@
 
             <div class="create-media-post-inputs-wrap hidden" id="media-post-type">
                 <div class="create-post-textarea-wrap">
-                    <textarea name="content" id="" cols="30" rows="10" class="textarea-content-create-post" placeholder="Media (optional)"></textarea>
+                        <input
+                            type="file"
+                            class="input-create-post-img"
+                            name="create-post-img"
+                        />
+                        @error("create-post-img")
+                            <p class="text-error-message">{{$message}}</p>
+                        @enderror
                 </div>
             </div>
 
             <div class="create-link-post-inputs-wrap hidden"  id="link-post-type">
                 <div class="create-post-textarea-wrap">
-                    <textarea name="content" id="" cols="30" rows="10" class="textarea-content-create-post" placeholder="Link (optional)"></textarea>
+                    <input name="create-link-post" type="text" class="input-create-link-post" placeholder="Url">
                 </div>
             </div>
 
