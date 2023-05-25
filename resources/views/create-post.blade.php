@@ -10,28 +10,41 @@
     </div>
     <div class="create-post-wrap">
         <div class="create-post-type-btn-wrap">
-            <button class="btn-create-post-type-selected">
+            <button class="btn-create-post-type post-type-selected" id="post-type-btn" onclick="selectPostType()">
                 <i class="fa-solid fa-file-lines icon-create-post-type"></i>
                 <p class="text-create-post-type">Post</p>
             </button>
-            <button class="btn-create-post-type-center">
+            <button class="btn-create-post-type-center"  id="media-post-type-btn" onclick="selectMediaPostType()">
                 <i class="fa-regular fa-image icon-create-post-type"></i>
-                <p class="text-create-post-type">Image & Video</p>
+                <p class="text-create-post-type">Image</p>
             </button>
-            <button class="btn-create-post-type">
+            <button class="btn-create-post-type" id="link-post-type-btn" onclick="selectLinkPostType()">
                 <i class="fa-solid fa-link icon-create-post-type"></i>
                 <p class="text-create-post-type">Link</p>
             </button>
         </div>
         <form class="form-create-post" method="POST">
             @csrf
-            <div class="create-post-inputs-wrap">
-                <div class="create-post-textarea-wrap">
-                    <textarea name="title" id="" cols="30" rows="10" class="textarea-title-create-post" placeholder="Title"></textarea>
-                </div>
+            
+            <div class="create-post-textarea-wrap">
+                <textarea name="title" id="" cols="30" rows="10" class="textarea-title-create-post" placeholder="Title"></textarea>
+            </div>
 
+            <div class="create-post-inputs-wrap" id="post-type">
                 <div class="create-post-textarea-wrap">
                     <textarea name="content" id="" cols="30" rows="10" class="textarea-content-create-post" placeholder="Text (optional)"></textarea>
+                </div>
+            </div>
+
+            <div class="create-media-post-inputs-wrap hidden" id="media-post-type">
+                <div class="create-post-textarea-wrap">
+                    <textarea name="content" id="" cols="30" rows="10" class="textarea-content-create-post" placeholder="Media (optional)"></textarea>
+                </div>
+            </div>
+
+            <div class="create-link-post-inputs-wrap hidden"  id="link-post-type">
+                <div class="create-post-textarea-wrap">
+                    <textarea name="content" id="" cols="30" rows="10" class="textarea-content-create-post" placeholder="Link (optional)"></textarea>
                 </div>
             </div>
 

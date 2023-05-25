@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>Laravel Reddit</title>
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <!-- Styles -->
@@ -17,6 +17,7 @@
         <link href="{{ asset('css/standard_layout.css'); }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/index.css'); }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/create_post.css'); }}" rel="stylesheet" type="text/css">
+        <script src="{{asset('js/create-post-type.js');}}" defer></script>
     </head>
     <body class="wrapper">
         <header class="header">
@@ -45,6 +46,6 @@
         <main class="main-wrap">
             {{$slot}}
         </main>
-        <footer class="footer"></footer>
+
     </body>
 </html>
