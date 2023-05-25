@@ -14,6 +14,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="https://cdn.tailwindcss.com"></script>
         <link href="{{ asset('css/standard_layout.css'); }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/index.css'); }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/create_post.css'); }}" rel="stylesheet" type="text/css">
@@ -27,6 +28,7 @@
             <a class="link-logo-wrap" href="/">
                 <img src="{{asset('images/redditlogotext.png')}}" alt="reddit logo" class="img-logo">
             </a>
+            @auth
             <div class="navigation-dropdown-wrap">
                 <div class="navigation-dropdown-label-wrap" onclick="toggleNavigationDropdown()">
                     <span class="span-navigation-label">
@@ -41,7 +43,7 @@
                         <p class="txt-community-dropdown-label">
                             YOUR COMMUNITIES
                         </p>
-                        <button class="btn-create-community" onclick="showCreateCommunity()">
+                        <button class="btn-create-community" onclick="showCreateCommunityCard()">
                             <i class="fa-solid fa-plus icon-create-create-community"></i>
                             <p class="txt-create-community-btn-label">Create Community</p>
                         </button>
@@ -50,24 +52,101 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
+            @else 
+            <div class="navigation-dropdown-wrap"></div>
+            @endauth  
             <div class="search-input-wrap">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" class="input-search" placeholder="Search Reddit">
             </div>
+            @auth
             <a class="link-profile-wrap">
                 <span class="span-profile-wrap">
                     <img src="{{asset('images/redditprofileimg.png')}}" alt="profile image" class="img-profile">
-                    <p class="text-profile">UserName</p>
+                    <p class="text-profile">{{auth()->user()->username}}</p>
                 </span>
                 <i class="fa-solid fa-angle-down"></i>
-            </a>    
+            </a>
+            @else 
+            <button class="btn-header-login" onclick="showLoginCard()">Log In</button>
+            @endauth
         </header>
+
+        <span class="login-background-blur" id="login-background-blur" onclick="closeLoginCard()"></span>
+        <form class="login-card-wrap" id="login-card-wrap" method="POST" action="/users/authenticate">
+            @csrf   
+            <span class="span-login-card-header">
+                <button class="btn-close-login-card" id="btn-close-login-card" onclick="closeLoginCard()">
+                    <i class="fa-solid fa-xmark icon-close-login-card"></i>
+                </button>
+            </span>
+            <div class="login-card-main-wrap">
+                <p class="txt-login-card-label">Log In</p>
+                <div class="login-card-inputs-wrap">
+                    <input type="text" class="input-login-card" name="username" placeholder="Username">
+                    @error("username")
+                    <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                    @enderror
+                    <input type="password" class="input-login-card" name="password" placeholder="Password">
+                    @error("password")
+                    <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                    @enderror
+                </div>
+                <button class="btn-login-card-submit" >Log In</button>
+                <span class="span-login-card-signup">
+                    <p class="txt-login-card-signup-label">New to Reddit?</p>
+                    <span class="link-login-card-signup" onclick="goToSignup()">Sign Up</span>
+                </span>
+            </div>
+        </form>
+        <form class="signup-card-wrap" id="signup-card-wrap" method="POST" action="/users">
+                @csrf   
+                <span class="span-login-card-header">
+                    <button class="btn-close-login-card" id="btn-close-signup-card" onclick="closeLoginCard()">
+                        <i class="fa-solid fa-xmark icon-close-login-card"></i>
+                    </button>
+                </span>
+                <div class="login-card-main-wrap">
+                    <p class="txt-login-card-label">Sign Up</p>
+                    <div class="login-card-inputs-wrap">
+                        <input type="email" class="input-login-card" name="email" placeholder="Email">
+                        @error("email")
+                        <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                        @enderror
+                        <input type="text" class="input-login-card" name="username" placeholder="Username">
+                        @error("username")
+                        <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                        @enderror
+                        <input type="password" class="input-login-card" name="password" placeholder="Password">
+                        @error("password")
+                        <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                        @enderror
+                        <input
+                            type="password"
+                            class="input-login-card"
+                            placeholder="Confirm Password"
+                            name="password_confirmation"
+                            value="{{old('password_confirmation')}}"
+                        />
+                        @error("password_confirmation")
+                        <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                        @enderror
+                    </div>
+                    <button class="btn-login-card-submit">Create Account</button>
+                    <span class="span-login-card-signup">
+                        <p class="txt-login-card-signup-label">Already a redditor?</p>
+                        <span class="link-login-card-signup" onclick="goToLogin()">Log In</span>
+                    </span>
+                </div>
+            </form>
+
         <main class="main-wrap">
-            <div class="create-community-card-wrap">
+            <span class="background-blur" id="background-blur" onclick="closeCreateCommunityCard()"></span>
+            <div class="create-community-card-wrap" id="create-community-card">
                 <span class="span-create-community-header">
                     <p class="txt-create-community-label">Create Community</p>
-                    <button class="btn-close-create-community-card">
+                    <button class="btn-close-create-community-card" id="btn-create-community-card" onclick="closeCreateCommunityCard()">
                         <i class="fa-solid fa-xmark icon-create-community-card-close"></i>
                     </button>
                 </span>

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string("title");
-            $table->number("memberCount");
+            $table->integer("memberCount");
             $table->longText("description");
         });
     }

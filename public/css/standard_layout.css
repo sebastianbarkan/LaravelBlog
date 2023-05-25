@@ -153,14 +153,18 @@ html,
     width: 100%;
     max-width: 100vw;
     min-height: 100vh;
+    height: 100%;
 }
 
 .main-wrap {
     padding: 2% 30%;
     display: flex;
+    height: 100%;
     flex-direction: column;
+    min-height: 100vh;
     width: 100%;
     row-gap: 1rem;
+    position: relative;
 }
 
 .header {
@@ -177,6 +181,154 @@ html,
 .link-logo-wrap {
     cursor: pointer;
     flex-basis: 5%;
+}
+
+.login-card-wrap {
+    box-shadow: 1px 7px 20px 2px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    border-radius: 12px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: none;
+    padding: 2rem;
+    row-gap: 1rem;
+    flex-direction: column;
+}
+
+.txt-login-card-label {
+    font-weight: 500;
+    font-size: 20px;
+    color: #1a1a1b;
+    line-height: 24px;
+    max-width: 280px;
+    text-transform: none;
+}
+
+.span-login-card-signup {
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+}
+
+.txt-login-card-signup-label {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 12px;
+    letter-spacing: unset;
+    line-height: 16px;
+}
+
+.link-login-card-signup {
+    color: rgb(0, 121, 211);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.login-card-main-wrap {
+    display: flex;
+    width: 100%;
+    row-gap: 1rem;
+    flex-direction: column;
+}
+
+.input-login-card {
+    background-color: #f6f7f8;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    font-family: IBMPlexSans, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 1rem;
+}
+
+.login-card-inputs-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 100%;
+}
+
+.btn-login-card-submit {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    width: 100%;
+    line-height: 17px;
+    text-transform: unset;
+    min-height: 32px;
+}
+
+.btn-login-card-submit:hover {
+    background-color: #ff6932;
+}
+
+.show-login-card-wrap {
+    display: flex;
+}
+
+.signup-card-wrap {
+    box-shadow: 1px 7px 20px 2px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    border-radius: 12px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: none;
+    padding: 2rem;
+    row-gap: 1rem;
+    flex-direction: column;
+}
+
+.show-signup-card-wrap {
+    display: flex;
+}
+
+.span-login-card-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn-close-login-card {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-close-login-card {
+    font-size: 1.25rem;
+}
+
+.btn-header-login {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    min-height: 32px;
+    min-width: 32px;
+}
+
+.btn-header-login:hover {
+    background-color: #ff6932;
 }
 
 .img-logo {
@@ -270,6 +422,7 @@ html,
 .community-dropdown-container {
     width: 100%;
     display: flex;
+    z-index: 9;
     flex-direction: column;
 }
 
@@ -359,9 +512,18 @@ html,
 .create-community-card-wrap {
     background-color: white;
     border-radius: 4px;
-    display: flex;
+    display: none;
     flex-direction: column;
+    z-index: 10;
     row-gap: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.show-create-community-card {
+    display: flex;
 }
 
 .span-create-community-header {
@@ -529,6 +691,37 @@ html,
 }
 
 .icon-create-community-card-close {
-    width: 16px;
-    height: 16px;
+    font-size: 1.25rem;
+}
+
+.background-blur {
+    display: none;
+    opacity: 0.5;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.login-background-blur {
+    display: none;
+    opacity: 0.5;
+    background: #000;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.show-login-background-blur {
+    display: block;
+}
+
+.show-background-blur {
+    display: block;
 }

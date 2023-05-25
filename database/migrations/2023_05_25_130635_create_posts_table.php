@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->constrained()->onDelete("cascade");
-            $table->foreignId("community_id")->constrained()->onDelete("cascade");
             $table->timestamps();
             $table->string("type");
             $table->string("title");
@@ -32,7 +31,9 @@ return new class extends Migration
      * @return void
      */
     public function down()
-    {
+    {   
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('posts');
+        Schema::enableForeignKeyConstraints();
     }
 };
