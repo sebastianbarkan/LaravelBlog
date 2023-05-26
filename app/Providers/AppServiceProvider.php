@@ -26,7 +26,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
         Facades\View::composer('components.standard_layout', function (View $view) {
             $view->with('communities', Community::query()->latest()->get());
         });

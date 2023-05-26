@@ -36,15 +36,8 @@ class CommunityController extends Controller
     public function show(Community $community, Post $post ) {
         return view("communities.show", [
             "community" => $community,
-            "posts" => Post::latest()->where("listing_id", $listing->id),
         ]);
     }
 
-    //Get all communities
-    public function index() {
-        return Blade::render('<standard_layout />', [
-            "communities" => Community::latest()
-        ]);
-    }
 
 }

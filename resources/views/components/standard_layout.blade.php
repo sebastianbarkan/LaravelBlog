@@ -50,7 +50,12 @@
                         </button>
                         <div class="community-dropdown-results-wrap">
                             @foreach($communities as $community) 
-                            <a href="">{{$community['community-title']}}</a>
+                            <a href="/communities/{{$community['community-title']}}" class="link-community-dropdown-result">
+                                <img src="{{asset('/images/redditlogo.png')}}" alt="reddit logo" class="img-community-dropdown-logo">
+                                <p class="txt-community-dropdown-title">
+                                    r/{{$community['community-title']}}
+                                </p>
+                            </a>
                             @endforeach
                         </div>
                     </div>
