@@ -23,7 +23,8 @@ class CommunityController extends Controller
         $formFields = $request->validate([
             'community-title' => ["required", Rule::unique('communities', 'community-title')],
         ]);
-
+    
+        $formFields["community-title"] = preg_replace('/\s+/', '', $formFields["community-title"]);
         $formFields["privacy"] = $selected_privacy;
         $formFields["memberCount"] = 1;
         Community::create($formFields);
