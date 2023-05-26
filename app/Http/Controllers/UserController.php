@@ -6,10 +6,11 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
-    //  //Show register/create form
+    //Show register/create form
     public function create() {
         return view("users.register");
     }
@@ -54,7 +55,7 @@ class UserController extends Controller
     //authenticate user
     public function authenticate(Request $request){
         $formFields = $request->validate([
-            'username'=>["required", "username"],
+            'username'=>['required', 'string', 'max:255', 'unique:users'],
             'password'=>"required"
         ]);
 
@@ -63,6 +64,6 @@ class UserController extends Controller
             return redirect("/");
         }
         
-        return back();
+        return Redirect::back()->withErrors(["username"=>"Invalid Credentials"]);
     }
 }

@@ -18,6 +18,7 @@
         <link href="{{ asset('css/standard_layout.css'); }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/index.css'); }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/create_post.css'); }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/users.css'); }}" rel="stylesheet" type="text/css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js" ></script>
         <script src="{{asset('js/create-post-type.js');}}" defer></script>
@@ -69,77 +70,12 @@
                 <i class="fa-solid fa-angle-down"></i>
             </a>
             @else 
-            <button class="btn-header-login" onclick="showLoginCard()">Log In</button>
+            <a class="btn-header-login" href="/login">Log In</a>
             @endauth
         </header>
 
-        <span class="login-background-blur" id="login-background-blur" onclick="closeLoginCard()"></span>
-        <form class="login-card-wrap" id="login-card-wrap" method="POST" action="/users/authenticate">
-            @csrf   
-            <span class="span-login-card-header">
-                <button class="btn-close-login-card" id="btn-close-login-card" onclick="closeLoginCard()">
-                    <i class="fa-solid fa-xmark icon-close-login-card"></i>
-                </button>
-            </span>
-            <div class="login-card-main-wrap">
-                <p class="txt-login-card-label">Log In</p>
-                <div class="login-card-inputs-wrap">
-                    <input type="text" class="input-login-card" name="username" placeholder="Username">
-                    @error("username")
-                    <p class="text-red-500 test-xs mt-1">{{$message}}</p>
-                    @enderror
-                    <input type="password" class="input-login-card" name="password" placeholder="Password">
-                    @error("password")
-                    <p class="text-red-500 test-xs mt-1">{{$message}}</p>
-                    @enderror
-                </div>
-                <button class="btn-login-card-submit" >Log In</button>
-                <span class="span-login-card-signup">
-                    <p class="txt-login-card-signup-label">New to Reddit?</p>
-                    <span class="link-login-card-signup" onclick="goToSignup()">Sign Up</span>
-                </span>
-            </div>
-        </form>
-        <form class="signup-card-wrap" id="signup-card-wrap" method="POST" action="/users">
-                @csrf   
-                <span class="span-login-card-header">
-                    <button class="btn-close-login-card" id="btn-close-signup-card" onclick="closeLoginCard()">
-                        <i class="fa-solid fa-xmark icon-close-login-card"></i>
-                    </button>
-                </span>
-                <div class="login-card-main-wrap">
-                    <p class="txt-login-card-label">Sign Up</p>
-                    <div class="login-card-inputs-wrap">
-                        <input type="email" class="input-login-card" name="email" placeholder="Email">
-                        @error("email")
-                        <p class="text-red-500 test-xs mt-1">{{$message}}</p>
-                        @enderror
-                        <input type="text" class="input-login-card" name="username" placeholder="Username">
-                        @error("username")
-                        <p class="text-red-500 test-xs mt-1">{{$message}}</p>
-                        @enderror
-                        <input type="password" class="input-login-card" name="password" placeholder="Password">
-                        @error("password")
-                        <p class="text-red-500 test-xs mt-1">{{$message}}</p>
-                        @enderror
-                        <input
-                            type="password"
-                            class="input-login-card"
-                            placeholder="Confirm Password"
-                            name="password_confirmation"
-                            value="{{old('password_confirmation')}}"
-                        />
-                        @error("password_confirmation")
-                        <p class="text-red-500 test-xs mt-1">{{$message}}</p>
-                        @enderror
-                    </div>
-                    <button class="btn-login-card-submit">Create Account</button>
-                    <span class="span-login-card-signup">
-                        <p class="txt-login-card-signup-label">Already a redditor?</p>
-                        <span class="link-login-card-signup" onclick="goToLogin()">Log In</span>
-                    </span>
-                </div>
-            </form>
+    
+       
 
         <main class="main-wrap">
             <span class="background-blur" id="background-blur" onclick="closeCreateCommunityCard()"></span>
@@ -167,7 +103,7 @@
                     <p class="txt-create-community-card-type-label">Community Type</p>
                     <div class="create-community-card-select-type-wrap">
                         <span class="span-create-community-card-type-choice-wrap">
-                            <input type="checkbox" class="input-create-community-card-choice">
+                            <input type="checkbox" class="input-create-community-card-choice" name="privacy-input" onclick="onlyOne(this)">
                             <i class="fa-solid fa-user icon-create-community-card-choice"></i>
                             <span class="span-create-community-card-choice-labels">
                                 <p class="txt-create-community-card-choice-label">Public</p>
@@ -175,7 +111,7 @@
                             </span>
                         </span>
                         <span class="span-create-community-card-type-choice-wrap">
-                            <input type="checkbox" class="input-create-community-card-choice">
+                            <input type="checkbox" class="input-create-community-card-choice" name="privacy-input" onclick="onlyOne(this)">
                             <i class="fa-solid fa-eye icon-create-community-card-choice"></i>
                             <span class="span-create-community-card-choice-labels">
                                 <p class="txt-create-community-card-choice-label">Restricted</p>
@@ -183,7 +119,7 @@
                             </span>
                         </span>
                         <span class="span-create-community-card-type-choice-wrap">
-                            <input type="checkbox" class="input-create-community-card-choice">
+                            <input type="checkbox" class="input-create-community-card-choice" name="privacy-input" onclick="onlyOne(this)">
                             <i class="fa-solid fa-lock icon-create-community-card-choice"></i>
                             <span class="span-create-community-card-choice-labels">
                                 <p class="txt-create-community-card-choice-label">Private</p>

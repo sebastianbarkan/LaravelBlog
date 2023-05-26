@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string("title");
             $table->integer("memberCount");
+            $table->string("privacy");
             $table->longText("description");
         });
     }

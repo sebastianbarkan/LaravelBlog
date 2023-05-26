@@ -40,3 +40,9 @@ Route::get('/login', [UserController::class, "login"])->name("login")->middlewar
 
 //Login User
 Route::post("/users/authenticate", [UserController::class, "authenticate"]);
+
+//Store community data
+Route::post('/communities', [CommunityController::class, "store"])->middleware("auth");
+
+//Show Community
+Route::get('/communities/{community}', [CommunityController::class, "show"])->middleware("auth");
