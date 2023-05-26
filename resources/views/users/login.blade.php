@@ -10,14 +10,14 @@
             <div class="login-card-main-wrap">
                 <p class="txt-login-card-label">Log In</p>
                 <div class="login-card-inputs-wrap">
-                    <input type="text" class="input-login-card" name="username" placeholder="Username">
-                    @error("username")
-                    <p class="text-red-500 test-xs mt-1">{{$message}}</p>
-                    @enderror
-                    <input type="password" class="input-login-card" name="password" placeholder="Password">
                     @error("password")
-                    <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                    <p class="text-red-500 text-xs">{{$message}}</p>
                     @enderror
+                    @error("username")
+                    <p class="text-red-500 text-xs">{{$message}}</p>
+                    @enderror
+                    <input type="text" class="input-login-card" name="username" placeholder="Username" value="{{old('username')}}">
+                    <input type="password" class="input-login-card" name="password" placeholder="Password" value="{{old('password')}}">
                 </div>
                 <button class="btn-login-card-submit" >Log In</button>
                 <span class="span-login-card-signup">
@@ -26,7 +26,7 @@
                 </span>
             </div>
         </form>
-        
+
         <div class="create-post-link-wrap">
             <a href="/create-post" class="link-create-post">
                 <img src="{{asset('images/redditprofileimg.png')}}" alt="profile image" class="img-create-post-link">

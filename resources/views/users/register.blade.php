@@ -10,27 +10,28 @@
         <div class="login-card-main-wrap">
             <p class="txt-login-card-label">Sign Up</p>
             <div class="login-card-inputs-wrap">
-                <input type="email" class="input-login-card" name="email" placeholder="Email">
                 @error("email")
-                <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                <p class="text-red-500 text-xs">{{$message}}</p>
                 @enderror
-                <input type="text" class="input-login-card" name="username" placeholder="Username">
                 @error("username")
-                <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                <p class="text-red-500 text-xs">{{$message}}</p>
                 @enderror
-                <input type="password" class="input-login-card" name="password" placeholder="Password">
                 @error("password")
-                <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                <p class="text-red-500 text-xs">{{$message}}</p>
                 @enderror
+                @error("password_confirmation")
+                <p class="text-red-500 test-xs">{{$message}}</p>
+                @enderror
+                <input type="email" class="input-login-card" name="email" placeholder="Email" value="{{old('email')}}">
+                <input type="text" class="input-login-card" name="username" placeholder="Username" value="{{old('username')}}">
+                <input type="password" class="input-login-card" name="password" placeholder="Password" value="{{old('password')}}">
                 <input
                     type="password"
                     class="input-login-card"
                     placeholder="Confirm Password"
                     name="password_confirmation"
+                    value="{{old('password_confirmation')}}"
                 />
-                @error("password_confirmation")
-                    <p class="text-red-500 test-xs mt-1">{{$message}}</p>
-                @enderror
             </div>
             <button class="btn-login-card-submit">Create Account</button>
             <span class="span-login-card-signup">

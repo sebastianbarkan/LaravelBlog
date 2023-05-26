@@ -64,6 +64,6 @@ class UserController extends Controller
             return redirect("/");
         }
         
-        return Redirect::back()->withErrors(["username"=>"Invalid Credentials"]);
+        return back()->withErrors(["username"=>"Invalid Credentials"])->onlyInput("username");
     }
 }
