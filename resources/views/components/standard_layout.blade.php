@@ -49,13 +49,15 @@
                             <p class="txt-create-community-btn-label">Create Community</p>
                         </button>
                         <div class="community-dropdown-results-wrap">
-
+                            @foreach($communities as $community) 
+                            <a href="">{{$community['community-title']}}</a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
             @else 
-            <div class="navigation-dropdown-wrap"></div>
+            <div class="placeholder-column"></div>
             @endauth  
             <div class="search-input-wrap">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -79,7 +81,8 @@
 
         <main class="main-wrap">
             <span class="background-blur" id="background-blur" onclick="closeCreateCommunityCard()"></span>
-            <div class="create-community-card-wrap" id="create-community-card">
+            <form method="POST" class="create-community-card-wrap" id="create-community-card" action="/communities">
+                @csrf
                 <span class="span-create-community-header">
                     <p class="txt-create-community-label">Create Community</p>
                     <button class="btn-close-create-community-card" id="btn-create-community-card" onclick="closeCreateCommunityCard()">
@@ -95,7 +98,10 @@
                         </p>
                     </span>
                     <div class="create-community-card-name-input-wrap">
-                        <input type="text" class="input-create-community-card-name">
+                        <input type="text" class="input-create-community-card-name" name="community-title">
+                        @error("community-title")
+                        <p class="text-red-500 text-xs">{{$message}}</p>
+                        @enderror
                         <p class="txt-create-community-card-placeholder">r/</p>
                     </div>
                 </div>
@@ -103,7 +109,7 @@
                     <p class="txt-create-community-card-type-label">Community Type</p>
                     <div class="create-community-card-select-type-wrap">
                         <span class="span-create-community-card-type-choice-wrap">
-                            <input type="checkbox" class="input-create-community-card-choice" name="privacy-input" onclick="onlyOne(this)">
+                            <input type="checkbox" class="input-create-community-card-choice" name="privacy[]" value="public" onclick="singlePrivacyType(this)">
                             <i class="fa-solid fa-user icon-create-community-card-choice"></i>
                             <span class="span-create-community-card-choice-labels">
                                 <p class="txt-create-community-card-choice-label">Public</p>
@@ -111,7 +117,7 @@
                             </span>
                         </span>
                         <span class="span-create-community-card-type-choice-wrap">
-                            <input type="checkbox" class="input-create-community-card-choice" name="privacy-input" onclick="onlyOne(this)">
+                            <input type="checkbox" class="input-create-community-card-choice" name="privacy[]" value="restricted" onclick="singlePrivacyType(this)">
                             <i class="fa-solid fa-eye icon-create-community-card-choice"></i>
                             <span class="span-create-community-card-choice-labels">
                                 <p class="txt-create-community-card-choice-label">Restricted</p>
@@ -119,7 +125,7 @@
                             </span>
                         </span>
                         <span class="span-create-community-card-type-choice-wrap">
-                            <input type="checkbox" class="input-create-community-card-choice" name="privacy-input" onclick="onlyOne(this)">
+                            <input type="checkbox" class="input-create-community-card-choice" name="privacy[]" value="private" onclick="singlePrivacyType(this)">
                             <i class="fa-solid fa-lock icon-create-community-card-choice"></i>
                             <span class="span-create-community-card-choice-labels">
                                 <p class="txt-create-community-card-choice-label">Private</p>
@@ -129,10 +135,10 @@
                     </div>
                 </div>
                 <div class="create-community-card-footer">
-                    <button class="btn-create-community-card-cancel">Cancel</button>
-                    <button class="btn-create-community-card-create">Create Community</button>
+                    <button class="btn-create-community-card-cancel" onclick="closeCreateCommunityCard()">Cancel</button>
+                    <button class="btn-create-community-card-create" type="submit">Create Community</button>
                 </div>
-            </div>  
+            </form>  
             {{$slot}}
         </main>
 

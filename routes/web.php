@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\CommunityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,6 @@ Route::post('/communities', [CommunityController::class, "store"])->middleware("
 
 //Show Community
 Route::get('/communities/{community}', [CommunityController::class, "show"])->middleware("auth");
+
+//All communities
+Route::get('/communities/all', [CommunityController::class, "index"]);

@@ -267,6 +267,10 @@ html,
     background-color: white;
 }
 
+.placeholder-column {
+    flex-basis: 12.5%;
+}
+
 .navigation-dropdown-label-wrap {
     display: flex;
     width: 100%;
@@ -515,7 +519,7 @@ html,
 }
 
 .btn-create-community-card-create {
-    background-color: #0079d3;
+    background-color: #0079d3 !important;
     color: white;
     border: 1px solid #0079d3;
     border-radius: 9999px;
@@ -559,4 +563,8 @@ html,
     top: 0;
     left: 0;
     position: absolute;
+}
+
+.show-background-blur {
+    display: block;
 }

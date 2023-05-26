@@ -22,7 +22,7 @@ function closeCreateCommunityCard() {
     createCommunityCard.classList.remove("show-create-community-card");
 }
 
-function onlyOne(checkbox) {
+function singlePrivacyType(checkbox) {
     const checkboxes = document.getElementsByName("privacy-input");
     checkboxes.forEach((item) => {
         if (item !== checkbox) item.checked = false;

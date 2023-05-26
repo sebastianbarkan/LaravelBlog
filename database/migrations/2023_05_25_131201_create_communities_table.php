@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('communities', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("title");
+            $table->string("community-title");
             $table->integer("memberCount");
             $table->string("privacy");
-            $table->longText("description");
+            $table->longText("description")->nullable();
         });
     }
 
