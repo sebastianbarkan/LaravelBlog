@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="{{asset('images/redditlogo.png')}}">
         <title>Laravel Reddit</title>
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
         <link href="{{ asset('css/create_post.css'); }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/users.css'); }}" rel="stylesheet" type="text/css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
         <script src="{{asset('js/create-post-type.js');}}" defer></script>
         <script src="{{asset('js/community-dropdown.js');}}" defer></script>
     </head>
@@ -32,10 +33,19 @@
             @auth
             <div class="navigation-dropdown-wrap">
                 <div class="navigation-dropdown-label-wrap" onclick="toggleNavigationDropdown()">
+                    @if(collect(request()->segments())->last() == "") 
+                    
                     <span class="span-navigation-label">
                         <i class="fa-solid fa-house"></i>
                         <p class="text-navigation-label">Home</p>
                     </span>
+                    @else    
+                        <span class="span-navigation-label">
+                            <img  src="{{asset('/images/redditlogo.png')}}" alt="reddit logo" class="img-community-dropdown-logo" />
+                            <p class="text-navigation-label">r/{{ collect(request()->segments())->last() }}</p>
+                        </span>
+                    @endif
+                    
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
                 <div class="community-dropdown-container">
